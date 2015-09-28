@@ -14,9 +14,12 @@ Queue::Queue() : count(0){
 
 
 Queue::~Queue() {
-  while(!isEmpty())
+  if(beginning!=NULL){
+    delete(beginning);
+  }
+  if(end!=NULL)
   {
-    dequeue();
+    delete(end);
   }
 }
 
